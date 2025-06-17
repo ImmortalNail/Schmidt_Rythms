@@ -15,12 +15,11 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 async def main():
-    logging.basicConfig(level=logging.INFO)
     await init_db()
-    register_handlers(dp)
+    bot = Bot(token=TOKEN)
+    dp = Dispatcher()
+    dp.include_router(router)
     dp.include_router(admin_router)
-    asyncio.create_task(schedule(bot))
-    await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
