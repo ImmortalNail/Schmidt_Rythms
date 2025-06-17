@@ -2,7 +2,7 @@ python-telegram-bot==20.3
 gspread
 oauth2client
 pydrive
-aiogram==3.4.1
+aiogram==2.25.1
 python-dotenv
 aiofiles
 aiosqlite
